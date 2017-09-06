@@ -1,0 +1,151 @@
+#products{
+    max-width: 1170px;
+    margin: 0 auto 80px auto;
+    .filter{
+        margin-bottom: 80px;
+        ul{
+            text-align: center;
+            li{
+                display: inline-block;
+                list-style: none;
+                margin: 0 20px;
+                a{
+                    text-decoration: none;
+                    font-size: 18px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    color: #000;
+                    &.current{
+                        position: relative;
+                        &:after{
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                            bottom: -10px;
+                            width: 40px;
+                            height: 2px;
+                            background-color: #000;
+                        }
+                    }  
+                }
+            }
+        }
+    }
+    #products-container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+        .product{
+            .image-container{
+                position: relative;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                }
+                .image-options{
+                    height: 123px;
+                    width: 100%;
+                    position: absolute;
+                    bottom: -123px;
+                    background-color: rgba(255, 255, 255, 0.8);
+                    transition: bottom .3s;
+                    a{
+                        color: #000;
+                        text-decoration: none;
+                    }
+                    .quick-view, .save{
+                        width: 50%;
+                        height: 100%;
+                        display: inline-block;
+                        margin: 0 -2px;
+                        text-align: center;
+                        padding-top: 25px;
+                        .icon{
+                            width: 44px;
+                            height: 44px;
+                            border-radius: 100%;
+                            background-color: #33cfdd;
+                            margin: 0 auto 10px auto;
+                            
+                        }
+                    }
+                    .quick-view{
+                        img{
+                            margin-top: 6px;
+                        }
+                    }
+                    .save{
+                        img{
+                            margin-top: 3px;
+                        }
+                    }
+                }
+                &:hover{
+                    .image-options{
+                        bottom: 0;
+                    }
+                }
+            }
+            .name{
+                text-align: center;
+                min-height: 40px;
+                margin: 10px 0;
+            }
+            .price{
+                width: 50%;
+                height: 35px;
+                display: inline-block;
+                margin: 0 -2px;
+                font-weight: bold;
+            }
+            .add-to-bag{
+                margin: 0 -2px;
+                width: 50%;
+                min-height: 35px;
+                padding-top: 4px;
+                display: inline-block;
+                border: 1px solid #000; 
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 12px; 
+                &:hover{
+                    background-color: #ccc;
+                    cursor: pointer
+                    ;
+                }
+                img{
+                    position: relative;
+                    top: 3px;
+                    margin-right: 5px;
+                }  
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    #products{
+        #products-container{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+@media screen and (max-width: 480px) {
+    #products{
+        margin: 0px auto 80px auto;
+        padding-top: 20px;
+        .filter{
+            ul{
+                li{
+                    margin: 0 5px;
+                    a{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+    
+}

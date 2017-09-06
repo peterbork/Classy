@@ -1,0 +1,24 @@
+<div id="slider">
+  <div id="slide-container">
+    <div class="slide current">
+      <button>Learn more about great deals</button>
+    </div>
+    <div class="slide"></div>
+  </div>
+  <div id="controls">
+    <div (click)=prevSlide() class="btn prev">
+      <img src="assets/img/slider-arrow.png" alt="">
+    </div>
+    <div (click)=nextSlide() class="btn next">
+      <img src="assets/img/slider-arrow.png" alt="">
+    </div>
+  </div>
+  <div id="indicators">
+    <div (click)=changeToThisSlide($event) class="indicator current"></div>
+    <div (click)=changeToThisSlide($event) class="indicator"></div>
+  </div>
+  <div id="timer">
+    <div [ngStyle]="{'width': progress + '%'} " id="timer__progress">
+    </div>  
+  </div>  
+</div>

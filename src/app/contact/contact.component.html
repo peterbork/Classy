@@ -1,0 +1,30 @@
+
+<form #signupForm="ngForm" (ngSubmit)="submitForm()">
+    <div class="submitted" *ngIf="submitted; ">
+        Thanks for submitting {{ contact.firstname }}. 
+        Using the email: {{contact.email}}
+    </div>
+  <div>
+    <label for="firstname">First name</label>
+    <input #firstname="ngModel" type="text" id="firstname" name="firstname" [(ngModel)]="contact.firstname" required>
+    <div *ngIf="!firstname.valid && firstname.dirty" class="error">
+      Firstname is required.
+    </div>
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input #email="ngModel" type="text" id="email" name="email" [(ngModel)]="contact.email" required pattern="[^ @]*@[^ @]*">
+    <div *ngIf="!email.valid && email.dirty" class="error">
+      Email is required or invalid.
+    </div>
+  </div>
+  <div>
+      <label for="email">Message</label>
+      <textarea #message="ngModel" name="message" id="message" cols="30" rows="10" [(ngModel)]="contact.message" required></textarea>
+      <div *ngIf="!message.valid && message.dirty" class="error">
+        Message is required
+      </div>
+    </div>
+  <button type="submit">Send Message</button>
+</form>
+

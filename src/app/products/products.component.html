@@ -1,0 +1,66 @@
+<section id="products" [ngStyle]="{'margin-top': ((currentPath === '/') ? 0 : 120) + 'px'}">
+    <div class="filter" *ngIf="currentPath === '/'">
+        <ul>
+            <li>
+                <a href="" class="current">new arrivals</a>
+            </li>
+            <li>
+                <a href="">top sellers</a>
+            </li>
+            <li>
+                <a href="">featured</a>
+            </li>
+        </ul>
+    </div>
+    <div class="filter" *ngIf="currentPath === '/collection'">
+        <ul>
+            <li>
+                New collection (1-12 of 12)
+            </li>
+            <li>
+                Sort by ⌄
+            </li>
+            <li>
+                Features ⌄
+            </li>
+            <li>
+                Size ⌄
+            </li>
+            <li>
+                Colour ⌄
+            </li>
+            <li>
+                Price ⌄
+            </li>
+        </ul>
+    </div>
+    <div id="products-container">
+        <div *ngFor="let product of products" class="product">
+            <div class="image-container">
+                <img src="./{{product.img}}" alt="">
+                <div class="image-options">
+                    <div class="quick-view">
+                        <a [routerLink]="['/product', product.id]">
+                        <div class="icon"><img src="./assets/img/icon-quick-view.png" alt=""></div>
+                        Quick View
+                        </a>
+                    </div>
+                    <div class="save">
+                        <div class="icon"><img src="./assets/img/icon-save.png" alt=""></div>
+                        Save
+                    </div>
+                </div>
+            </div>
+            <div class="name">
+                {{product.name}}
+            </div>
+            <div class="price">
+                {{product.price}}
+            </div>
+            <div class="add-to-bag">
+                <img src="./assets/img/icon-bag.png" alt="">
+                Add to bag
+            </div>
+        </div>
+    </div>
+</section>

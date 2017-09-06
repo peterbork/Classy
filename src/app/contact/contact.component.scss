@@ -1,0 +1,42 @@
+form{
+	max-width: 1170px;
+	margin: 120px auto 0 auto;
+	padding: 0 20px;
+	.submitted{
+		width: 100%;
+		border: 2px solid darken(lightgreen, 10%);
+		background-color:  lightgreen;
+		padding: 30px;
+		font-size: 20px;
+		border-radius: 5px;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+	label{
+		width: 100%;
+		display: block;
+		text-transform: uppercase;
+		font-weight: 700;
+		margin-top: 20px;
+	}
+	input, textarea{
+		display: block;
+		width: 100%;
+		padding: 15px;
+		font-size: 16px;
+		border: 1px solid #ccc;
+		
+	}
+	button{
+		padding: 20px 30px;
+		border: 2px solid #ccc;
+		background-color: transparent;
+		font-size: 20px;
+		display: block;
+		margin: 20px auto 0 auto;
+		text-transform: uppercase;
+		font-weight: 700;
+		
+	}
+
+}
