@@ -58,21 +58,25 @@
   #indicators{
     width: 100%;
     position: absolute;
-    bottom: 20px;
+    bottom: 40px;
     left: 0;
     right: 0;
     margin: auto;
     text-align: center;
     .indicator{
-      width: 2px;
-      height: 10px;
+      width: 3px;
+      height: 15px;
       background-color: #fff;
       display: inline-block;
       position: relative;
+      transition: all 0.3s;
       &.current{
         background-color: #33d0de;
-        height: 20px;
-        top: 5px;
+        height: 30px;
+        top: 7.5px;
+      }
+      &:hover{
+        cursor: pointer;
       }
     }
   }
@@ -113,7 +117,7 @@
     }
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 500px) {
   #slider{
     display: none;
   }

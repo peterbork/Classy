@@ -18,35 +18,35 @@
                 New collection (1-12 of 12)
             </li>
             <li>
-                Sort by ⌄
+                Sort by <i class="fa fa-caret-down" aria-hidden="true"></i>
             </li>
             <li>
-                Features ⌄
+                Features <i class="fa fa-caret-down" aria-hidden="true"></i>
             </li>
             <li>
-                Size ⌄
+                Size <i class="fa fa-caret-down" aria-hidden="true"></i>
             </li>
             <li>
-                Colour ⌄
+                Colour <i class="fa fa-caret-down" aria-hidden="true"></i>
             </li>
             <li>
-                Price ⌄
+                Price <i class="fa fa-caret-down" aria-hidden="true"></i>
             </li>
         </ul>
     </div>
     <div id="products-container">
         <div *ngFor="let product of products" class="product">
             <div class="image-container">
-                <img src="./{{product.img}}" alt="">
+                <img src="./{{product.img}}" alt="{{product.name}}">
                 <div class="image-options">
                     <div class="quick-view">
                         <a [routerLink]="['/product', product.id]">
-                        <div class="icon"><img src="./assets/img/icon-quick-view.png" alt=""></div>
+                        <div class="icon"><img src="./assets/img/icon-quick-view.png" alt="icon"></div>
                         Quick View
                         </a>
                     </div>
                     <div class="save">
-                        <div class="icon"><img src="./assets/img/icon-save.png" alt=""></div>
+                        <div class="icon"><img src="./assets/img/icon-save.png" alt="icon"></div>
                         Save
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                 {{product.price}}
             </div>
             <div class="add-to-bag">
-                <img src="./assets/img/icon-bag.png" alt="">
+                <img src="./assets/img/icon-bag.png" alt="icon">
                 Add to bag
             </div>
         </div>

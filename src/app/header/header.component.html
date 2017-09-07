@@ -1,16 +1,16 @@
 <nav [ngStyle]="{'background-color': backgroundColor}">
   <div class="nav--centered">
     <div id="logo">
-      <img src="./assets/img/logo.png" alt="">
+      <a [routerLink]="['/']"><img src="./assets/img/logo.png" alt="icon"></a>
     </div>
     <ul>
-      <li class="hideOnMobile"><a href="#"><span class="icon"><img src="./assets/img/icon-user.png" alt=""></span> Login</a></li>
-      <li class="hideOnMobile"><a href="#"><span class="icon"><img src="./assets/img/icon-bag-2.png" alt=""></span> 3 Items</a></li>
-      <li><a href="#"><img src="./assets/img/icon-search.png" alt=""></a></li>
-      <li><a href="#"><img src="./assets/img/icon-menu.png" alt=""></a>
+      <li class="hideOnMobile"><a href="#"><span class="icon"><img src="./assets/img/icon-user.png" alt="icon"></span> Login</a></li>
+      <li class="hideOnMobile"><a href="#"><span class="icon"><img src="./assets/img/icon-bag-2.png" alt="icon"></span> 3 Items</a></li>
+      <li><a href="#"><img src="./assets/img/icon-search.png" alt="icon"></a></li>
+      <li><a href="#"><img src="./assets/img/icon-menu.png" alt="icon"></a>
       <ul>
-          <li class="showOnMobile"><a href="#"><span class="icon"><img src="./assets/img/icon-user.png" alt=""></span> Login</a></li>
-          <li class="showOnMobile"><a href="#"><span class="icon"><img src="./assets/img/icon-bag-2.png" alt=""></span> 3 Items</a></li>
+          <li class="showOnMobile"><a href="#"><span class="icon"><img src="./assets/img/icon-user.png" alt="icon"></span> Login</a></li>
+          <li class="showOnMobile"><a href="#"><span class="icon"><img src="./assets/img/icon-bag-2.png" alt="icon"></span> 3 Items</a></li>
         <li><a [routerLink]="['/']">Frontpage</a></li>
         <li><a [routerLink]="['/collection']">Collection</a></li>
         <li><a [routerLink]="['/contact']">Contact</a></li>

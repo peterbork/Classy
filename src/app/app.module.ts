@@ -40,7 +40,7 @@ import { ProductService } from './product.service';
           {path: 'contact', component: ContactComponent},
       ])
   ],
-  providers: [ProductService],
+  providers: [ProductService] ,
   bootstrap: [AppComponent]
 })
 export class AppModule { }

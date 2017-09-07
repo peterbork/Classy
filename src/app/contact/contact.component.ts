@@ -17,7 +17,6 @@ export class ContactComponent implements OnInit {
     this.contact.message = '';
   }
   submitForm() {
-    console.log('submitted');
     this.submitted = true;
     this.contact.firstname = '';
     this.contact.email = '';

@@ -1,6 +1,6 @@
 form{
 	max-width: 1170px;
-	margin: 120px auto 0 auto;
+	margin: 140px auto 0 auto;
 	padding: 0 20px;
 	.submitted{
 		width: 100%;
@@ -36,7 +36,10 @@ form{
 		margin: 20px auto 0 auto;
 		text-transform: uppercase;
 		font-weight: 700;
-		
+		&:hover{
+			background-color: #ccc;
+			cursor: pointer;
+		}
 	}
 
 }
