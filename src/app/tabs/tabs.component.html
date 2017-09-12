@@ -1,16 +1,8 @@
 <div #tabs id="tabs">
   <div id="labels">
-    <div (click)=changeTab($event) class="tab tab-1 active">Description</div>
-    <div (click)=changeTab($event) class="tab tab-2">Brand</div>
-    <div (click)=changeTab($event) class="tab tab-3">Info</div>
+    <div *ngFor="let label of labels; let i = index" (click)=changeTab(i) [ngClass]="{'active': active === i}" class="tab">{{label}}</div>
   </div>
-  <div class="content tab-1 active">
-    1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus amet earum soluta odit hic assumenda sunt debitis, rerum quaerat doloribus minima dolores illum nesciunt quos atque? Earum sapiente beatae, iste quaerat consequuntur dignissimos, suscipit rerum voluptates debitis eaque eligendi harum molestias error veniam hic voluptatem, minus neque quos necessitatibus reprehenderit deserunt? Odio dolorem aspernatur earum nostrum ipsa accusantium perferendis adipisci, exercitationem officia corporis minima, doloremque reprehenderit tenetur laboriosam iusto quibusdam ut laborum aut, veniam suscipit dolorum? Saepe illo quia odio repellat natus animi nam officiis reiciendis sapiente excepturi, rem iure voluptates repudiandae maiores dolores libero ut ipsam nihil sequi commodi.
-  </div>
-  <div class="content tab-2">
-    2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus amet earum soluta odit hic assumenda sunt debitis, rerum quaerat doloribus minima dolores illum nesciunt quos atque? Earum sapiente beatae, iste quaerat consequuntur dignissimos, suscipit rerum voluptates debitis eaque eligendi harum molestias error veniam hic voluptatem, minus neque quos necessitatibus reprehenderit deserunt? Odio dolorem aspernatur earum nostrum ipsa accusantium perferendis adipisci, exercitationem officia corporis minima, doloremque reprehenderit tenetur laboriosam iusto quibusdam ut laborum aut, veniam suscipit dolorum? Saepe illo quia odio repellat natus animi nam officiis reiciendis sapiente excepturi, rem iure voluptates repudiandae maiores dolores libero ut ipsam nihil sequi commodi.
-  </div>
-  <div class="content tab-3">
-    3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus amet earum soluta odit hic assumenda sunt debitis, rerum quaerat doloribus minima dolores illum nesciunt quos atque? Earum sapiente beatae, iste quaerat consequuntur dignissimos, suscipit rerum voluptates debitis eaque eligendi harum molestias error veniam hic voluptatem, minus neque quos necessitatibus reprehenderit deserunt? Odio dolorem aspernatur earum nostrum ipsa accusantium perferendis adipisci, exercitationem officia corporis minima, doloremque reprehenderit tenetur laboriosam iusto quibusdam ut laborum aut, veniam suscipit dolorum? Saepe illo quia odio repellat natus animi nam officiis reiciendis sapiente excepturi, rem iure voluptates repudiandae maiores dolores libero ut ipsam nihil sequi commodi.
+  <div *ngFor="let text of content; let i = index" [ngClass]="{'active': active === i}" class="content">
+    {{ text }}
   </div>
 </div>

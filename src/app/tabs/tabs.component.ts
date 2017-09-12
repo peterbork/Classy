@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-tabs',
@@ -6,21 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tabs.component.scss']
 })
 export class TabsComponent implements OnInit {
+    @Input() content;
+    @Input() labels;
   constructor() { }
-
-  ngOnInit() {
+  active = 0;
+  ngOnInit() {}
+  changeTab(tabId) {
+      this.active = tabId;
   }
-  changeTab(event) {
-    const tabs = document.getElementsByClassName('tab');
-    const contects = document.getElementsByClassName('content');
-    for (let i = 0; i < tabs.length; i++) {
-      tabs[i].classList.remove('active');
-    }
-    for (let i = 0; i < contects.length; i++) {
-      contects[i].classList.remove('active');
-    }
-    event.target.className += ' active';
-    document.getElementsByClassName('content ' + event.target.classList[1])[0].className += ' active';
-  }
-
 }
