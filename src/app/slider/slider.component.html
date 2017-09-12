@@ -1,9 +1,8 @@
 <div id="slider">
   <div id="slide-container">
-    <div [ngClass]="{'current': currentSlide === 1}" class="slide">
-      <button>Learn more about great deals</button>
+    <div *ngFor="let slide of slides; let i = index" [ngStyle]="{'background-image': 'url(../../assets/img/'+ slide.bg + ')'}" [ngClass]="{'current': currentSlide === i}" class="slide">
+      <button *ngIf="slide.btn != ''">{{ slide.btn }}</button>
     </div>
-    <div [ngClass]="{'current': currentSlide === 2}" class="slide"></div>
   </div>
   <div id="controls">
     <div (click)=prevSlide() class="btn prev">
@@ -14,8 +13,7 @@
     </div>
   </div>
   <div id="indicators">
-    <div (click)=changeSlide(1) [ngClass]="{'current': currentSlide === 1}" class="indicator"></div>
-    <div (click)=changeSlide(2) [ngClass]="{'current': currentSlide === 2}" class="indicator"></div>
+    <div (click)=changeSlide(i) *ngFor="let slide of slides; let i = index" [ngClass]="{'current': currentSlide === i}" class="indicator"></div>
   </div>
   <div id="timer">
     <div [ngStyle]="{'width': progress + '%'} " id="timer__progress">

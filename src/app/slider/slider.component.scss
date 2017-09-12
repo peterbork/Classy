@@ -70,6 +70,7 @@
       display: inline-block;
       position: relative;
       transition: all 0.3s;
+      margin: 0 3px;
       &.current{
         background-color: #33d0de;
         height: 30px;

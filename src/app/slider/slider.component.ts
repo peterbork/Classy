@@ -7,8 +7,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent implements OnInit {
-  currentSlide = 1;
-  totalSlides = 2;
+  slides = [
+      {
+      bg: 'slider-image-1.png',
+      btn: 'learn more about great deals'
+    },
+    {
+      bg: 'slider-image-2.png',
+      btn: ''
+    }
+  ];
+  currentSlide = 0;
+  totalSlides = this.slides.length - 1;
   progress = 0;
   constructor(private router: Router) { }
   ngOnInit () {
@@ -23,14 +33,15 @@ export class SliderComponent implements OnInit {
     }
   }
   nextSlide() {
-    (this.currentSlide !== this.totalSlides) ? this.currentSlide++ : this.currentSlide = 1;
+    (this.currentSlide !== this.totalSlides) ? this.currentSlide++ : this.currentSlide = 0;
     this.progress = 0;
   }
   prevSlide() {
-      (this.currentSlide !== 1) ? this.currentSlide-- : this.currentSlide = this.totalSlides;
+      (this.currentSlide !== 0) ? this.currentSlide-- : this.currentSlide = this.totalSlides;
       this.progress = 0;
   }
   changeSlide(id) {
     this.currentSlide = id;
+    this.progress = 0;
   }
 }
